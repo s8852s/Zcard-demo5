@@ -4,6 +4,11 @@ class BoardsController < ApplicationController
     @boards = Board.all
   end
 
+  def show
+    @board = Board.find_by(id: params[:id])
+    @post = Post.new
+  end
+
   def new
     @board = Board.new
   end
